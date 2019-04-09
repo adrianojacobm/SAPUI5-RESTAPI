@@ -1,0 +1,52 @@
+<mvc:View
+	controllerName="sapui5-front.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true">
+	<Shell>
+		<App class="myAppDemoWT" id="app">
+			<pages>
+				<Page title="Tela Inicial">
+					<headerContent>
+
+					</headerContent>
+
+					<Panel
+                  		>
+						<content>
+							<Table id="usersTable"
+								width="auto"
+								items="{users>/}"
+								>
+								<columns>
+									<Column id="IdCol"><Text text="Id"/></Column>
+									<Column id="NomeCol" demandPopin="true"><Text text="Nome"/></Column>
+									<Column id="DataNascCol" demandPopin="true"><Text text="Data de Nascimento"/></Column>
+									<Column id="EmailCol" minScreenWidth="Tablet" demandPopin="true"><Text text="Email"/></Column>
+									<Column id="CPFCol" minScreenWidth="Tablet" demandPopin="true"><Text text="CPF"/></Column>
+									<Column id="BtEditarCol" minScreenWidth="Tablet" demandPopin="true"><Text text=""/></Column>
+									<Column id="BtApagarCol" minScreenWidth="Tablet" demandPopin="true"><Text text=""/></Column>
+								</columns>
+								<items>
+									<ColumnListItem type="Active">
+										<cells>
+											<Text text="{users>Id}"/>
+											<Text text="{users>Nome}"/>
+											<Text text="{users>DataNasc}"/>
+											<Text text="{users>Email}"/>
+											<Text text="{users>Cpf}"/>															
+											<Button  press="onPressEditarButton"  text="Editar" tooltip="Editar" type="Navigation" />		
+											<Button  press="onPressApagarButton"  text="Apagar" tooltip="Apagar" type="Emphasized" />				
+											
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+							<Button id="novoUsuarioButton" width="11rem" text="Novo Usuário" type="Emphasized" press="onNewUser"></Button>
+						</content>
+					</Panel>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

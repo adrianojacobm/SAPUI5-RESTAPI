@@ -1,0 +1,93 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sapui5-front",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "sapui5-front.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sapui5-front.i18n.i18n"
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sapui5-front.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"async": true
+				},
+	  
+			"routes": [
+			  {
+				"pattern": "",
+				"name": "index",
+				"target": "index"
+				},
+        {
+          "pattern": "editUser/{userId}",
+          "name": "editUser",
+          "target": "editUser"
+				},
+				{
+
+					"pattern": "newUser",
+          "name": "newUser",
+          "target": "newUser"			
+				}				
+
+			],
+	  
+			"targets": {
+			  "index": {
+				"viewName": "App",
+				"viewLevel": 1,
+				"transition": "flip"
+				} ,
+        "editUser": {
+          "viewName": "EditUser",
+          "viewLevel": 2,
+          "transition": "flip"
+				},
+        "newUser": {
+          "viewName": "NewUser",
+          "viewLevel": 3,
+          "transition": "flip"
+				}								 
+
+			}	
+		
+		}
+	}
+}

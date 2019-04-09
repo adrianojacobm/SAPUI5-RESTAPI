@@ -1,0 +1,27 @@
+<mvc:View
+		controllerName="sapui5-front.controller.User"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns="sap.m"
+		xmlns:core="sap.ui.core"
+		xmlns:tnt="sap.tnt">
+	<Page title="Novo Usuário">
+	
+		<headerContent>
+
+		</headerContent>
+			<Panel
+				headerText="Usuário"
+				class="sapUiResponsiveMargin"
+				width="auto">		
+				<content>
+			
+					<Input id="userNome" placeholder="Nome" value=""></Input>
+					<Input id="userDataNasc" placeholder="Data de nascimento" value="" ></Input>
+					<Input id="userEmail" placeholder="Email" value="" ></Input>
+					<Input id="userCpf" placeholder="Cpf" value="" ></Input>
+					<Button id="salvarButton" width="11rem" text="Salvar" type="Emphasized" press="onSave"></Button>
+		
+				</content>
+			</Panel>
+	</Page>
+</mvc:View>

@@ -1,0 +1,27 @@
+<mvc:View
+		controllerName="sapui5-front.controller.User"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns="sap.m"
+		xmlns:core="sap.ui.core"
+		xmlns:tnt="sap.tnt">
+	<Page title="Editar Usuário">
+	
+		<headerContent>
+
+		</headerContent>
+			<Panel
+				headerText="Usuário"
+				class="sapUiResponsiveMargin"
+				width="auto">		
+				<content>
+		
+					<Input id="userNome" placeholder="Nome" value="{/Nome}"></Input>
+					<Input id="userDataNasc" placeholder="Data de nascimento" value="{/DataNasc}" ></Input>
+					<Input id="userEmail" placeholder="Email" value="{/Email}" ></Input>
+					<Input id="userCpf" placeholder="Cpf" value="{/Cpf}" ></Input>
+					<Button id="salvarButton" width="11rem" text="Salvar" type="Emphasized" press="onUpdate"></Button>
+		
+				</content>
+			</Panel>
+	</Page>
+</mvc:View>
